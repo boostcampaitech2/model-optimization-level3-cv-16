@@ -1,0 +1,53 @@
+method: bayes
+metric:
+  goal: maximize
+  name: val/f1
+parameters:
+  model_name:
+    distribution: constant
+    value:
+      tf_efficientnet_lite0
+  batch_size:
+    distribution: categorical
+    values:
+    - 32
+    - 64
+    - 96
+    - 128
+    - 192
+    - 256
+    - 384
+  lr_default:
+    distribution: uniform
+    max: 0.05
+    min: 0.0001
+  factor:
+    distribution: uniform
+    min: 0.1
+    max: 1.0
+  max_epochs:
+    distribution: int_uniform
+    min: 5
+    max: 20
+  aug:
+    distribution: categorical
+    values:
+    - custom_aug
+  loss:
+    distribution: categorical
+    values:
+    - f1
+    - ce
+    - weightedce
+    - focal
+    - weightedfocal
+  patience:
+    distribution: int_uniform
+    min: 1
+    max: 5
+  optimizer:
+    distribution: categorical
+    values:
+    - sgd
+    - adam
+program: sweep_train.py

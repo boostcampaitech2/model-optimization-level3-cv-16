@@ -1,0 +1,11 @@
+AUG_TEST: simple_augment_test
+AUG_TRAIN: custom_aug
+AUG_TRAIN_PARAMS: null
+BATCH_SIZE: 64
+DATASET: TACO
+DATA_PATH: /opt/ml/data/
+EPOCHS: 15
+FP16: true
+IMG_SIZE: 224
+INIT_LR: 0.0005
+VAL_RATIO: 0.0

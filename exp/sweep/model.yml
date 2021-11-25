@@ -1,0 +1,16 @@
+backbone:
+- - 1
+  - PreTrained
+  - - seresnext50_32x_4d
+    - false
+    - true
+    - true
+- - 1
+  - Flatten
+  - []
+- - 1
+  - Linear
+  - - 6
+depth_multiple: 1.0
+input_channel: 3
+width_multiple: 1.0
